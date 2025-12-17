@@ -4,6 +4,8 @@ class Laptop < Formula
   head "https://github.com/jpolo/laptop", branch: "main", using: :git
 
   def install
-    system "INSTALL_PREFIX='#{prefix}' LAPTOP_INSTALL_METHOD=brew make install"
+    system "INSTALL_PREFIX='#{prefix}' " +
+      "INSTALL_BREW_PACKAGE=w5s/tap/laptop " +
+      "make install"
   end
 end
